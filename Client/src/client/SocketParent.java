@@ -1,6 +1,8 @@
 package client;
 
-public class SocketParent {
+import java.io.IOException;
+
+public class SocketParent extends Thread{
     private final int PORT;
 
     public SocketParent(int PORT) {

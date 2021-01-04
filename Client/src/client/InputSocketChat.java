@@ -11,11 +11,19 @@ public class InputSocketChat extends SocketParent{
         super(PORT);
     }
 
-    public void run() throws IOException, InterruptedException {
+    @Override
+    public void run(){
+        try {
+            runSocket();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    protected void runSocket() throws IOException {
         InetAddress host = InetAddress.getLocalHost();
 
         while(true) {
-
             Scanner msg = new Scanner(System.in);
 
             Socket socket = new Socket(host.getHostName(), this.getPORT());
@@ -23,8 +31,6 @@ public class InputSocketChat extends SocketParent{
 
             objectOutputStream.writeObject(msg.nextLine());
             objectOutputStream.close();
-
-            Thread.sleep(5);
         }
     }
 }

@@ -21,6 +21,8 @@ public class Main {
                 ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
 
                 String msg = (String) objectInputStream.readObject();
+
+
                 Date date = new Date();
 
                 System.out.printf("[%s] [%tc] => %s%n", socket.getRemoteSocketAddress(), date, msg);
