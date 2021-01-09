@@ -8,7 +8,7 @@ import java.net.Socket;
 import java.util.Date;
 
 public class Main {
-    private static final int PORT = 5000;
+    private static final int PORT = 5001;
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
 
