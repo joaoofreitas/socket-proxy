@@ -5,7 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Client/Client.iml" filepath="$PROJECT_DIR$/Client/Client.iml" />
       <module fileurl="file://$PROJECT_DIR$/Proxy/Proxy.iml" filepath="$PROJECT_DIR$/Proxy/Proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/Server/Server.iml" filepath="$PROJECT_DIR$/Server/Server.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/sniff-the-game.iml" filepath="$PROJECT_DIR$/.idea/sniff-the-game.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/socket-proxy.iml" filepath="$PROJECT_DIR$/.idea/socket-proxy.iml" />
     </modules>
   </component>
 </project>
