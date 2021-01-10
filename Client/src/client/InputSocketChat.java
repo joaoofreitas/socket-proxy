@@ -7,17 +7,8 @@ import java.net.Socket;
 import java.util.Scanner;
 
 public class InputSocketChat extends SocketParent{
-    public InputSocketChat(int PORT) {
-        super(PORT);
-    }
-
-    @Override
-    public void run(){
-        try {
-            runSocket();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public InputSocketChat(int PORT, String serverIP) {
+        super(PORT, serverIP);
     }
 
     protected void runSocket() throws IOException {
@@ -31,6 +22,15 @@ public class InputSocketChat extends SocketParent{
 
             objectOutputStream.writeObject(msg.nextLine());
             objectOutputStream.close();
+        }
+    }
+
+    @Override
+    public void run(){
+        try {
+            runSocket();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

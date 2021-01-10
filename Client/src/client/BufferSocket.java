@@ -6,25 +6,11 @@ import java.net.InetAddress;
 import java.net.Socket;
 
 public class BufferSocket extends SocketParent{
-
     private final int delay;
-    public BufferSocket(int PORT) {
-        super(PORT);
-        this.delay = 50;
-    }
 
-    public BufferSocket(int PORT, int delay) {
-        super(PORT);
+    public BufferSocket(int PORT, int delay, String serverIP) {
+        super(PORT, serverIP);
         this.delay = delay;
-    }
-
-    @Override
-    public void run(){
-        try {
-            runSocket();
-        } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     protected void runSocket() throws IOException, InterruptedException  {
@@ -38,6 +24,15 @@ public class BufferSocket extends SocketParent{
 
             objectOutputStream.close();
             Thread.sleep(delay);
+        }
+    }
+
+    @Override
+    public void run(){
+        try {
+            runSocket();
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

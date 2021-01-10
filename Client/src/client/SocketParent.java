@@ -1,12 +1,12 @@
 package client;
 
-import java.io.IOException;
-
-public class SocketParent extends Thread{
+public abstract class SocketParent extends Thread{
     private final int PORT;
+    private final String serverIP;
 
-    public SocketParent(int PORT) {
+    public SocketParent(int PORT, String serverIP) {
         this.PORT = PORT;
+        this.serverIP = serverIP;
     }
 
     public int getPORT() {

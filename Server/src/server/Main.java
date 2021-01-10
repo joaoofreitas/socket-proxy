@@ -5,7 +5,6 @@ import java.io.ObjectInputStream;
 import java.lang.ClassNotFoundException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.Date;
 
 public class Main {
     private static final int PORT = 5001;
@@ -22,10 +21,7 @@ public class Main {
 
                 String msg = (String) objectInputStream.readObject();
 
-
-                Date date = new Date();
-
-                System.out.printf("[%s] [%tc] => %s%n", socket.getRemoteSocketAddress(), date, msg);
+                System.out.printf("[%s] => %s%n", socket.getRemoteSocketAddress(), msg);
                 objectInputStream.close();
 
                 if (msg.equalsIgnoreCase("Exit")) break;
